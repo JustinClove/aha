@@ -1,0 +1,106 @@
+{
+  "identifier" : "0D111967",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "EB73AFE9",
+      "localizations" : [
+
+      ],
+      "name" : "wuha",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "55.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "53F536FD",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "11",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "year",
+          "subscriptionGroupID" : "EB73AFE9",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "11.49",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "82466366",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "12",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "month",
+          "subscriptionGroupID" : "EB73AFE9",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "5EB72667",
+          "introductoryOffer" : {
+            "internalID" : "84CE92B0",
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "1m_1299",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "start_free",
+          "subscriptionGroupID" : "EB73AFE9",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,34 @@
+git_url("git@github.com:SunlightJustin/fastlanematch.git")
+#git_url("https://github.com/SunlightJustin/fastlanematch.git")
+
+
+storage_mode("git")
+
+
+type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
+
+# app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
+# username("user@fastlane.tools") # Your Apple Developer Portal username
+
+# For all available options run `fastlane match --help`
+# Remove the # in the beginning of the line to enable the other options
+
+# The docs are available on https://docs.fastlane.tools/actions/match
+
+git_branch("master")  # git分支称号
+
+# bundleId，能够填多个bundleId，如App内包括 extension
+app_identifier(["com.start.vpn"])
+keychain_password('2222')
+
+
+ENV["MATCH_PASSWORD"] = "2222" # 导出
+
+username("song19861206@163.com") # 共用的AppleId
+
+#git_bearer_authorization("Z2gtU3VubGlnaHRKdXN0aW46Z2hwX0E0dzFWQVhXQjdXbFI4ZURNVVRiWFdtWk1vdW9saTBKV1hnQQ==")
+#git_basic_authorization("U3VubGlnaHRKdXN0aW46Z2hwX0E0dzFWQVhXQjdXbFI4ZURNVVRiWFdtWk1vdW9saTBKV1hnQQ==")
+
+
+
+ENV["FASTLANE_PASSWORD"] = "zouYajuan520"

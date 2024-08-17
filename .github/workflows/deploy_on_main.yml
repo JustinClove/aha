@@ -1,0 +1,53 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: deploy
+
+on:
+  push:
+    branches: [ "release" ]
+  pull_request:
+    branches: [ "release" ]
+
+jobs:
+  build:
+ 
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Fastlane
+      run: |
+        gem install cocoapods -v 1.15.2  
+        gem install fastlane -NV
+
+    - name: Install CocoaPods
+      run: |
+        pod --version
+        pod install
+
+    - name: Install Apple certificates
+      uses: apple-actions/import-codesign-certs@v1
+      with:
+        # p12-filepath: fastlane/huasong/Certificates11.p12
+        # # p12-file-base64: ${{ secrets.CERTIFICATE_P12 }}
+        # # p12-password: ${{ secrets.CERTIFICATE_PASSWORD }}
+        # p12-password: 2222
+        p12-filepath: fastlane/warp/Certificates.p12
+        p12-password: 123456
+
+    - name: upload testflight
+      # env:
+      #   # FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }} # 设置环境变量
+      #   # APPLE_ID: ${{ secrets.APPLE_ID }}
+      #   # TEAM_ID: ${{ secrets.TEAM_ID }} # 您的Apple开发者团队ID
+      #   # APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER }}
+      #   # FASTLANE_PASSWORD: 2222
+      run: |
+        fastlane action app_store_connect_api_key
+        fastlane release
+        # fastlane match_all
+
+    # - name: upload testflight1
+    #   run: fastlane release

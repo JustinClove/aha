@@ -1,0 +1,262 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+skip_docs
+
+ 
+platform :ios do
+
+  # 定义一个全局变量api_key，下面都会要用到这个 api_key
+  # key_id 和 issuer_id 都可以在 AppStoreConnect后台 -> 用户和访问 -> 秘钥 这里找到
+  # api_key = app_store_connect_api_key(
+  #     key_id: "29GV9Y24TJ",
+  #     issuer_id: "dd8720fa-81f1-4700-8c0c-e44dc6cb03ab",
+  #     key_filepath: "fastlane/huasong/AuthKey_29GV9Y24TJ.p8", # 上面下载的p8文件路径
+  #     duration: 1200, # optional (maximum 1200)
+  #     in_house: false # optional but may be required if using match/sigh
+  # )
+  api_key = app_store_connect_api_key(
+    key_id: "ULMB59343L",
+    issuer_id: "d5ed3a09-3e63-42df-8b88-9681fd94623f",
+    key_filepath: "fastlane/warp/AuthKey_ULMB59343L.p8", # 上面下载的p8文件路径
+    duration: 1200, # optional (maximum 1200)
+    in_house: false # optional but may be required if using match/sigh
+  )
+
+# fastlane run app_store_connect_api_key  key_id:"29GV9Y24TJ" issuer_id:"dd8720fa-81f1-4700-8c0c-e44dc6cb03ab" key_filepath:"AuthKey_29GV9Y24TJ.p8"
+  
+  desc "下载所有需要的证书和描述文件到本地，不会重新创建证书和描述文件（只读方式）"
+  lane :match_all do
+      # match(api_key: api_key, type: "development", readonly: true)
+      # match(api_key: api_key, type: "adhoc", readonly: true)
+      match(api_key: api_key, type: "appstore", readonly: true)
+  end
+
+  desc "同步证书，假如证书过期或新增了设备，会从头创立证书和描绘文件"
+  desc "该方法仅限办理员运用，其他开发成员只需求运用 match_all 方法即可"
+  lane :force_match do
+      # match(api_key: api_key, type: "development", force_for_new_devices: true)
+      # match(api_key: api_key, type: "adhoc", force_for_new_devices: true)
+      match(api_key: api_key, type: "appstore")
+  end
+
+  lane :release do
+
+      # teamid = "3D59AJD96Y"
+      # team_name = "huasong teng"
+      # bundle_identifier = "com.start.vpn"
+      # account = "song19861206@163.com"
+      # mobileprovision_name = "dis_start2"
+      # dir_name = "huasong"
+
+      teamid = "AH46QT2Y7A"
+      team_name = "MARS PRIVACY INC"
+      bundle_identifier = "com.warpvpn.data"
+      bundle_identifier_packet = "com.warpvpn.data.packet1"
+      account = "marsvpn.net@gmail.com"
+      mobileprovision_name = "dis9"
+      mobileprovision_name_packet = "dis9p"
+      dir_name = "warp"
+
+
+      # 读取文件内容
+      file_path = File.expand_path("id_rsa")
+      file_content = File.read(file_path)
+
+      xcode_select "/Applications/Xcode_14.3.app"
+
+      # 输出文件内容
+      puts "Content of #{file_path}: #{file_content}"
+      sh "security find-identity -v -p codesigning"
+
+      update_project_provisioning(
+          xcodeproj: "MarsVPN.xcodeproj",
+          target_filter: ".*MarsVPN.*", # matches name or type of a target
+          # profile: "fastlane/huasong/dis_start2.mobileprovision", # optional if you use sigh
+          profile: "fastlane/#{dir_name}/#{mobileprovision_name}.mobileprovision", # optional if you use sigh
+          build_configuration: "Release",
+          # certificate: "fastlane/Certificates11.p12",
+          code_signing_identity: "iPhone Distribution" # optionally specify the codesigning identity
+      )
+
+      update_project_provisioning(
+        xcodeproj: "MarsVPN.xcodeproj",
+        target_filter: ".*ShadowsocksExtension.*", # matches name or type of a target
+        # profile: "fastlane/huasong/dis_start2.mobileprovision", # optional if you use sigh
+        profile: "fastlane/#{dir_name}/#{mobileprovision_name_packet}.mobileprovision", # optional if you use sigh
+        build_configuration: "Release",
+        # certificate: "fastlane/Certificates11.p12",
+        code_signing_identity: "iPhone Distribution" # optionally specify the codesigning identity
+      )
+
+      update_code_signing_settings(
+        team_id: teamid, 
+        profile_name: mobileprovision_name,
+        bundle_identifier: bundle_identifier,
+        code_sign_identity: "iPhone Distribution",
+        targets: ["MarsVPN"]
+      )
+
+      update_code_signing_settings(
+        team_id: teamid, 
+        profile_name: mobileprovision_name_packet,
+        bundle_identifier: bundle_identifier_packet,
+        code_sign_identity: "iPhone Distribution",
+        targets: ["ShadowsocksExtension"]
+      )
+
+      sigh(
+          api_key: api_key,
+          app_identifier: bundle_identifier,
+          username: account,
+          team_id: teamid,
+          team_name: team_name,
+          provisioning_name: mobileprovision_name
+      )
+
+      sigh(
+        api_key: api_key,
+        app_identifier: bundle_identifier_packet,
+        username: account,
+        team_id: teamid,
+        team_name: team_name,
+        provisioning_name: mobileprovision_name_packet
+      )
+
+
+      # 先同步appstore证书和描述文件
+      # match(api_key: api_key, type: "appstore", readonly: true)
+      # match(api_key: api_key, type: "appstore", readonly: true, git_private_key: file_content)
+
+      # cocoapods()
+
+         # 增加构建号
+      increment_build_number(
+          xcodeproj: "MarsVpn.xcodeproj",
+          build_number: date_based_build_number
+      )
+
+
+      # 构建你的应用
+      build_app(
+          export_xcargs: "-allowProvisioningUpdates", #keychain授权
+          export_options: {
+            provisioningProfiles: { 
+              bundle_identifier => mobileprovision_name,
+              bundle_identifier_packet => mobileprovision_name_packet
+            }  
+          },
+          scheme: "MarsVpn",
+          project: "MarsVpn.xcodeproj",
+          clean: true,
+          export_method: "app-store",
+          output_directory: "./build"
+      )
+      # 上传应用到AppStore
+      upload_to_app_store(
+            api_key: api_key,
+            force: true, # Skip HTMl report verification
+            skip_screenshots: true,
+            skip_metadata: true,
+            submit_for_review: false,
+            precheck_include_in_app_purchases: false,
+      )
+
+  end
+
+
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+
+    # app_store_connect_api_key
+    # get_provisioning_profile
+
+    # increment_build_number(
+    #     xcodeproj: "github-actions-demo-ios.xcodeproj",
+    #     build_number: date_based_build_number
+    # )
+
+    # build_app(
+    #     scheme: "github-actions-demo-ios",
+    #     configuration: "Release"
+    # )
+    # upload_to_testflight(skip_waiting_for_build_processing: true)
+
+
+ 
+
+
+
+    # # 安装所有的Cocoapods依赖
+    # cocoapods()
+
+    # 增加构建号
+    increment_build_number(
+        xcodeproj: "github-actions-demo-ios.xcodeproj",
+        build_number: date_based_build_number
+    )
+
+
+    # 构建你的应用
+    build_app(
+      scheme: "github-actions-demo-ios",
+      clean: true,
+      export_method: "app-store",
+      output_directory: "./build"
+    )
+
+    # 发布到TestFlight
+    upload_to_testflight(
+      skip_waiting_for_build_processing: true
+    )
+
+
+  end
+end
+
+def today_formatted
+  Date.today.strftime('%Y%m%d')
+end
+
+def default_build_number
+  "#{today_formatted}01"
+end
+
+def date_based_build_number
+  current_build_number = get_build_number(xcodeproj: "MarsVpn.xcodeproj")
+
+  build_date = current_build_number[0..7]
+  build_version = current_build_number[8..9]
+
+  if (!build_date || !build_version) || (build_date.empty? || build_version.empty?)
+    return default_build_number
+  end
+
+  begin
+    build_date_object = Date.strptime(build_date, '%Y%m%d')
+  rescue
+    return default_build_number
+  end
+
+
+  if build_date_object >= Date.today
+    new_version = build_version.to_i + 1
+    return "#{today_formatted}%02d" % new_version
+  end
+
+  return default_build_number
+end

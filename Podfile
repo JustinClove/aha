@@ -12,7 +12,7 @@ target 'MarsVPN' do
   # pod 'FirebaseFirestore', '~> 10.0.0'
   pod 'Kingfisher'
   pod 'SnapKit'
-  pod 'HandyJSON'
+  pod 'HandyJSON', '~> 5.0.4-beta'
   pod 'Moya'
   pod 'KeychainAccess', '~> 3.2.0'
   pod 'SwifterSwift', '~>5.2.0'

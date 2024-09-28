@@ -259,7 +259,6 @@
 		04ABF621293F72D200394170 /* MSWaveAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWaveAnimationView.m; sourceTree = "<group>"; };
 		04ABF623293F7DC800394170 /* MVIncreaseCountLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVIncreaseCountLabel.swift; sourceTree = "<group>"; };
 		04AEA1E82944A1D900AD9EE2 /* MarsVPNDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarsVPNDebug.entitlements; sourceTree = "<group>"; };
-		04AEA1E92944A20900AD9EE2 /* ShadowsocksExtensionDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShadowsocksExtensionDebug.entitlements; sourceTree = "<group>"; };
 		04CA4DC229432B4000A871C0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		04CA4DC429432B4000A871C0 /* PKHUDSystemActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDSystemActivityIndicatorView.swift; sourceTree = "<group>"; };
 		04CA4DC529432B4000A871C0 /* PKHUDAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PKHUDAnimation.swift; sourceTree = "<group>"; };
@@ -482,7 +481,6 @@
 				91B65EF329ECEBEC002724B3 /* LeafExtension-Bridging-Header.h */,
 				91B65EF029ECEBEC002724B3 /* libleaf */,
 				91B65EF429ECEBED002724B3 /* PacketTunnelProvider.swift */,
-				04AEA1E92944A20900AD9EE2 /* ShadowsocksExtensionDebug.entitlements */,
 				04A8C3852938AB75005F598A /* ShadowsocksExtension-Bridging-Header.h */,
 				0438AE17292CAB60009A526D /* Info.plist */,
 				0438AE18292CAB60009A526D /* ShadowsocksExtension.entitlements */,
@@ -1359,10 +1357,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MarsVPN/MarsVPNDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = AH46QT2Y7A;
+				DEVELOPMENT_TEAM = 3D59AJD96Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarsVPN/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Warp VPN";
@@ -1377,9 +1375,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data;
+				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dis9;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1440,10 +1438,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowsocksExtension/ShadowsocksExtensionDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AH46QT2Y7A;
+				DEVELOPMENT_TEAM = 3D59AJD96Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShadowsocksExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShadowsocksExtension;
@@ -1459,9 +1457,9 @@
 					"$(PROJECT_DIR)/ShadowsocksExtension/libleaf",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data.packet1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn.packet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dis9p;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksExtension/ShadowsocksExtension-Bridging-Header.h";

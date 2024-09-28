@@ -73,15 +73,15 @@ platform :ios do
 
 
       # 读取文件内容
-      file_path = File.expand_path("id_rsa")
-      file_content = File.read(file_path)
+      # file_path = File.expand_path("id_rsa")
+      # file_content = File.read(file_path)
 
-      xcversion(version: "16.0")
-      xcode_select "/Applications/Xcode_16.0.app"
-      sh "sudo xcode-select -s /Applications/Xcode.app"
+      # xcversion(version: "16.0")
+      # xcode_select "/Applications/Xcode_16.0.app"
+      # sh "sudo xcode-select -s /Applications/Xcode.app"
 
-      # 输出文件内容
-      puts "Content of #{file_path}: #{file_content}"
+      # # 输出文件内容
+      # puts "Content of #{file_path}: #{file_content}"
       sh "security find-identity -v -p codesigning"
 
       update_project_provisioning(

@@ -151,6 +151,7 @@ platform :ios do
           build_number: date_based_build_number
       )
 
+      sh "Pod install"
 
       # 构建你的应用
       build_app(

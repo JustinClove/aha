@@ -76,8 +76,9 @@ platform :ios do
       file_path = File.expand_path("id_rsa")
       file_content = File.read(file_path)
 
+      xcversion(version: "16.0")
       xcode_select "/Applications/Xcode_16.0.app"
-      # xcversion(version: "8.1")
+      sh "sudo xcode-select -s /Applications/Xcode.app"
 
       # 输出文件内容
       puts "Content of #{file_path}: #{file_content}"

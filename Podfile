@@ -29,7 +29,7 @@ target 'MarsVPN' do
   pod 'KMNavigationBarTransition'
   pod 'ReachabilitySwift', '~> 5.0.0'
   pod 'Flurry-iOS-SDK/FlurrySDK'
-  pod 'HDPingTools', '~> 1.2.12'
+  pod 'HDPingTools', '~> 2.0.0'
   pod 'Google-Mobile-Ads-SDK', '~> 9.11.0.1'
   
   post_install do |installer|

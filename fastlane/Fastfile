@@ -162,7 +162,7 @@ platform :ios do
           },
           scheme: "MarsVpn",
           project: "MarsVpn.xcodeproj",
-          clean: true,
+          clean: false,
           export_method: "app-store",
           output_directory: "./build"
       )

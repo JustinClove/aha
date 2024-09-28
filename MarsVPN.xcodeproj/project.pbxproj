@@ -1359,8 +1359,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MarsVPN/MarsVPNDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = AH46QT2Y7A;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1379,7 +1379,7 @@
 				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = dis9;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1400,11 +1400,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MarsVPN/MarsVPN.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MARS PRIVACY INC (AH46QT2Y7A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MARS PRIVACY INC (AH46QT2Y7A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AH46QT2Y7A;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AH46QT2Y7A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarsVPN/Info.plist;
@@ -1422,7 +1422,8 @@
 				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dis8;
+				PROVISIONING_PROFILE = "eec3097e-62ed-4410-8cb2-501d7d49345a";
+				PROVISIONING_PROFILE_SPECIFIER = dis9;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis9;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1438,8 +1439,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowsocksExtension/ShadowsocksExtensionDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AH46QT2Y7A;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1459,7 +1460,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data.packet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = dis9p;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksExtension/ShadowsocksExtension-Bridging-Header.h";
@@ -1472,10 +1473,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowsocksExtension/ShadowsocksExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MARS PRIVACY INC (AH46QT2Y7A)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = AH46QT2Y7A;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = AH46QT2Y7A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShadowsocksExtension/Info.plist;
@@ -1494,7 +1495,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.warpvpn.data.packet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "f2b73366-3804-467b-9d1e-4e9da63f27c7";
+				PROVISIONING_PROFILE_SPECIFIER = dis9p;
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis9p;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

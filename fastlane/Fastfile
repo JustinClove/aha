@@ -137,8 +137,8 @@ platform :ios do
         team_id: teamid,
         team_name: team_name,
         provisioning_name: mobileprovision_name_packet,
-        skip_certificate_verific: true，
-        force:true
+        skip_certificate_verific: true,
+        force: true
       )
 
 

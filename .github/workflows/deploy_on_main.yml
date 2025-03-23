@@ -17,6 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4  # 升级到最新 checkout 版本
 
+    - name: Select Xcode 16.2
+      run: |
+        sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+        xcodebuild -version
+
 
     - name: Install Fastlane
       run: |

@@ -158,7 +158,7 @@ platform :ios do
           export_options: {
             provisioningProfiles: { 
               bundle_identifier => mobileprovision_name,
-              bundle_identifier_packet => mobileprovision_name_packet
+              # bundle_identifier_packet => mobileprovision_name_packet
             }  
           },
           scheme: "MarsVpn",

@@ -286,6 +286,7 @@
 		04FDAD6D294EC9D7007DB2C7 /* GoogleService-Info-test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-test.plist"; sourceTree = "<group>"; };
 		66AB6183B91277B76DBE9972 /* Pods_MarsVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820F3C2B3CE089EDDA20734A /* Pods-MarsVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.debug.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		912FB66D2D900CAF000FFD64 /* ShadowsocksExtensionDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ShadowsocksExtensionDebug.entitlements; sourceTree = "<group>"; };
 		914E2C2E2A0B36A5004CB5B6 /* MVAPISystemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVAPISystemConfig.swift; sourceTree = "<group>"; };
 		919DF13E2A655A08009B8322 /* MVFreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFreeViewController.swift; sourceTree = "<group>"; };
 		919DF13F2A655A08009B8322 /* MVLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVLocationViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +484,7 @@
 				91B65EF429ECEBED002724B3 /* PacketTunnelProvider.swift */,
 				04A8C3852938AB75005F598A /* ShadowsocksExtension-Bridging-Header.h */,
 				0438AE17292CAB60009A526D /* Info.plist */,
+				912FB66D2D900CAF000FFD64 /* ShadowsocksExtensionDebug.entitlements */,
 				0438AE18292CAB60009A526D /* ShadowsocksExtension.entitlements */,
 			);
 			path = ShadowsocksExtension;
@@ -1439,9 +1441,11 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowsocksExtension/ShadowsocksExtensionDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3D59AJD96Y;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3D59AJD96Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShadowsocksExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShadowsocksExtension;
@@ -1460,6 +1464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn.packet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev_start_packet1;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksExtension/ShadowsocksExtension-Bridging-Header.h";

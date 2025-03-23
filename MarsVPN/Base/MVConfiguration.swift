@@ -9,15 +9,15 @@ import Foundation
 
 //appleAppID
 #if DEBUG
-//let AppleAppID = "1632843810"
-//let AppSpecificSharedSecret = "30a6b50bfe5041bf8948a94060935a87"
-//let AppGroup = "group.com.start.vpn"
-//let NetworkExtensionBundleIdSuffix = ".packagetunel"
+let AppleAppID = "1632843810"
+let AppSpecificSharedSecret = "30a6b50bfe5041bf8948a94060935a87"
+let AppGroup = "group.com.start.vpn"
+let NetworkExtensionBundleIdSuffix = ".packagetunel"
 
-let AppleAppID = "1645738370"
-let AppSpecificSharedSecret = "0e1509dc8ea54a9093db181a5dbec684"
-let AppGroup = "group.com.warp.vpn1"
-let NetworkExtensionBundleIdSuffix = ".packet"
+//let AppleAppID = "1645738370"
+//let AppSpecificSharedSecret = "0e1509dc8ea54a9093db181a5dbec684"
+//let AppGroup = "group.com.warp.vpn1"
+//let NetworkExtensionBundleIdSuffix = ".packet"
 
 #else
 let AppleAppID = "1645738370"

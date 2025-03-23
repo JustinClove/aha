@@ -129,15 +129,14 @@ platform :ios do
           provisioning_name: mobileprovision_name
       )
 
-      # sigh(
-      #   api_key: api_key,
-      #   app_identifier: bundle_identifier_packet,
-      #   username: account,
-      #   team_id: teamid,
-      #   team_name: team_name,
-      #   provisioning_name: mobileprovision_name_packet,
-      #   skip_certificate_verific: true
-      # )
+      sigh(
+        api_key: api_key,
+        app_identifier: bundle_identifier_packet,
+        username: account,
+        team_id: teamid,
+        team_name: team_name,
+        provisioning_name: mobileprovision_name_packet
+      )
 
 
       # 先同步appstore证书和描述文件

@@ -99,6 +99,7 @@
 		04D0DD9C2935AA4B00230C1D /* MVError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0DD9B2935AA4B00230C1D /* MVError.swift */; };
 		04D0DDA22935C5B500230C1D /* GetIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D0DDA02935C5B500230C1D /* GetIP.m */; };
 		04FDAD6E294EC9D7007DB2C7 /* GoogleService-Info-test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04FDAD6D294EC9D7007DB2C7 /* GoogleService-Info-test.plist */; };
+		8E6E7617A2BC4B453EF4554F /* Pods_MarsVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDC04B2F868AD2874F35B9CC /* Pods_MarsVPN.framework */; };
 		914E2C2F2A0B36A5004CB5B6 /* MVAPISystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E2C2E2A0B36A5004CB5B6 /* MVAPISystemConfig.swift */; };
 		914E2C302A0B876C004CB5B6 /* MVTunnelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B65F0A29ED4EA2002724B3 /* MVTunnelStore.swift */; };
 		919DF1412A655A08009B8322 /* MVFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919DF13E2A655A08009B8322 /* MVFreeViewController.swift */; };
@@ -150,7 +151,6 @@
 		91B65F0429ECF050002724B3 /* MVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B65F0329ECF050002724B3 /* MVAPI.swift */; };
 		91B65F0B29ED4EA2002724B3 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B65F0929ED4EA1002724B3 /* FileManager+Extension.swift */; };
 		91B65F0C29ED4EA2002724B3 /* MVTunnelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B65F0A29ED4EA2002724B3 /* MVTunnelStore.swift */; };
-		C6501D5C3D2D454BE63AF3A7 /* Pods_MarsVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AB6183B91277B76DBE9972 /* Pods_MarsVPN.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,8 +284,6 @@
 		04D0DDA02935C5B500230C1D /* GetIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetIP.m; sourceTree = "<group>"; };
 		04D0DDA12935C5B500230C1D /* GetIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetIP.h; sourceTree = "<group>"; };
 		04FDAD6D294EC9D7007DB2C7 /* GoogleService-Info-test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-test.plist"; sourceTree = "<group>"; };
-		66AB6183B91277B76DBE9972 /* Pods_MarsVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		820F3C2B3CE089EDDA20734A /* Pods-MarsVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.debug.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.debug.xcconfig"; sourceTree = "<group>"; };
 		912FB66D2D900CAF000FFD64 /* ShadowsocksExtensionDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ShadowsocksExtensionDebug.entitlements; sourceTree = "<group>"; };
 		914E2C2E2A0B36A5004CB5B6 /* MVAPISystemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVAPISystemConfig.swift; sourceTree = "<group>"; };
 		919DF13E2A655A08009B8322 /* MVFreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVFreeViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +370,9 @@
 		91B65F0329ECF050002724B3 /* MVAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVAPI.swift; sourceTree = "<group>"; };
 		91B65F0929ED4EA1002724B3 /* FileManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		91B65F0A29ED4EA2002724B3 /* MVTunnelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVTunnelStore.swift; sourceTree = "<group>"; };
-		AEF57A86384AF28D13650E9B /* Pods-MarsVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.release.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.release.xcconfig"; sourceTree = "<group>"; };
+		963BEE1CFD8FA2D476073B4E /* Pods-MarsVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.release.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.release.xcconfig"; sourceTree = "<group>"; };
+		E90FE8936C3FE73FC8CE76A9 /* Pods-MarsVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.debug.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		FDC04B2F868AD2874F35B9CC /* Pods_MarsVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0438AE06292CA1AB009A526D /* StoreKit.framework in Frameworks */,
-				C6501D5C3D2D454BE63AF3A7 /* Pods_MarsVPN.framework in Frameworks */,
+				8E6E7617A2BC4B453EF4554F /* Pods_MarsVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +469,7 @@
 			children = (
 				0438AE05292CA1AB009A526D /* StoreKit.framework */,
 				0438ADEF292C9F37009A526D /* NetworkExtension.framework */,
-				66AB6183B91277B76DBE9972 /* Pods_MarsVPN.framework */,
+				FDC04B2F868AD2874F35B9CC /* Pods_MarsVPN.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -888,8 +888,8 @@
 		9CBE7A083F593EC86455AF8A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				820F3C2B3CE089EDDA20734A /* Pods-MarsVPN.debug.xcconfig */,
-				AEF57A86384AF28D13650E9B /* Pods-MarsVPN.release.xcconfig */,
+				E90FE8936C3FE73FC8CE76A9 /* Pods-MarsVPN.debug.xcconfig */,
+				963BEE1CFD8FA2D476073B4E /* Pods-MarsVPN.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -901,13 +901,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0438ADE6292C9EFB009A526D /* Build configuration list for PBXNativeTarget "MarsVPN" */;
 			buildPhases = (
-				C50A955D7157554C08F8059A /* [CP] Check Pods Manifest.lock */,
+				32258268B2D5CCB7E68B250E /* [CP] Check Pods Manifest.lock */,
 				0438ADCE292C9EFA009A526D /* Sources */,
 				0438ADCF292C9EFA009A526D /* Frameworks */,
 				0438ADD0292C9EFA009A526D /* Resources */,
 				0438ADFC292C9F37009A526D /* Embed Foundation Extensions */,
-				F7AE18F0DAD5647DB344A7E3 /* [CP] Embed Pods Frameworks */,
-				49A77C9F077355BB7426C446 /* [CP] Copy Pods Resources */,
+				92CAF6F6ACB96F932043AC8C /* [CP] Embed Pods Frameworks */,
+				CD5E43F3F03350E3BDA32A84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -944,7 +944,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					0438ADD1292C9EFA009A526D = {
 						CreatedOnToolsVersion = 14.0;
@@ -964,6 +964,8 @@
 				Base,
 			);
 			mainGroup = 0438ADC9292C9EFA009A526D;
+			packageReferences = (
+			);
 			productRefGroup = 0438ADD3292C9EFA009A526D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1011,24 +1013,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		49A77C9F077355BB7426C446 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C50A955D7157554C08F8059A /* [CP] Check Pods Manifest.lock */ = {
+		32258268B2D5CCB7E68B250E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1050,7 +1035,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7AE18F0DAD5647DB344A7E3 /* [CP] Embed Pods Frameworks */ = {
+		92CAF6F6ACB96F932043AC8C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1065,6 +1050,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD5E43F3F03350E3BDA32A84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarsVPN/Pods-MarsVPN-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1271,6 +1273,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1332,6 +1335,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1352,17 +1356,19 @@
 		};
 		0438ADE7292C9EFB009A526D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 820F3C2B3CE089EDDA20734A /* Pods-MarsVPN.debug.xcconfig */;
+			baseConfigurationReference = E90FE8936C3FE73FC8CE76A9 /* Pods-MarsVPN.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MarsVPN/MarsVPNDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = 3D59AJD96Y;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3D59AJD96Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarsVPN/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Warp VPN";
@@ -1380,6 +1386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis_start3;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1393,19 +1400,18 @@
 		};
 		0438ADE8292C9EFB009A526D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEF57A86384AF28D13650E9B /* Pods-MarsVPN.release.xcconfig */;
+			baseConfigurationReference = 963BEE1CFD8FA2D476073B4E /* Pods-MarsVPN.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = MarsVPN/MarsVPN.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 13;
-				DEVELOPMENT_TEAM = AH46QT2Y7A;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 3D59AJD96Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarsVPN/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Warp VPN";
@@ -1423,7 +1429,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "eec3097e-62ed-4410-8cb2-501d7d49345a";
-				PROVISIONING_PROFILE_SPECIFIER = dis9;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis_start3;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1441,7 +1447,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShadowsocksExtension/ShadowsocksExtensionDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -1464,7 +1470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.start.vpn.packet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev_start_packet1;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis_start_packet;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ShadowsocksExtension/ShadowsocksExtension-Bridging-Header.h";

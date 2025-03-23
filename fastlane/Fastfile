@@ -183,53 +183,37 @@ platform :ios do
   end
 
 
-
-  desc "Push a new beta build to TestFlight"
-  lane :beta do
-
-    # app_store_connect_api_key
-    # get_provisioning_profile
-
-    # increment_build_number(
-    #     xcodeproj: "github-actions-demo-ios.xcodeproj",
-    #     build_number: date_based_build_number
-    # )
-
-    # build_app(
-    #     scheme: "github-actions-demo-ios",
-    #     configuration: "Release"
-    # )
-    # upload_to_testflight(skip_waiting_for_build_processing: true)
-
-
- 
-
-
-
-    # # 安装所有的Cocoapods依赖
-    # cocoapods()
-
-    # 增加构建号
-    increment_build_number(
-        xcodeproj: "github-actions-demo-ios.xcodeproj",
-        build_number: date_based_build_number
+  # ---------------------------
+  # 上传到 App Store Connect
+  # ---------------------------
+  desc "上传本地生成的 IPA 到 App Store"
+  lane :upload_to_appstore do |options|
+    ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
+    
+    # 验证 IPA 存在
+    UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)
+    
+    upload_to_app_store(
+      api_key: api_key,
+      ipa: ipa_path,
+      force: true,
+      skip_screenshots: true,
+      skip_metadata: true,
+      submit_for_review: false
     )
+  end
 
-
-    # 构建你的应用
-    build_app(
-      scheme: "github-actions-demo-ios",
-      clean: true,
-      export_method: "app-store",
-      output_directory: "./build"
-    )
-
-    # 发布到TestFlight
+  desc "上传本地生成的 IPA 到 TestFlight"
+  lane :upload_to_testflight do |options|
+    ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
+    
+    UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)
+    
     upload_to_testflight(
+      api_key: api_key,
+      ipa: ipa_path,
       skip_waiting_for_build_processing: true
     )
-
-
   end
 end
 

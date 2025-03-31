@@ -68,12 +68,12 @@ class MVProfielViewController: LXBaseTableViewController {
         self.tableView.reloadData()
         self.tableView.tableFooterView = createTableFooterView()
         
-        #if DEBUG
-        let leftButton = UIBarButtonItem(title: "WGlog", style: .plain) {
-            self.presentLogView()
-        }
-        self.navigationItem.leftBarButtonItem = leftButton
-        #endif
+//        #if DEBUG
+//        let leftButton = UIBarButtonItem(title: "WGlog", style: .plain) {
+//            self.presentLogView()
+//        }
+//        self.navigationItem.leftBarButtonItem = leftButton
+//        #endif
     }
     
     override func viewWillAppear(_ animated: Bool) {

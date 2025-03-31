@@ -10,7 +10,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.start.vpn</string>
+		<string>group.com.warp.vpn1</string>
 	</array>
 </dict>
 </plist>

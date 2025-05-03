@@ -1,6 +1,8 @@
 # Uncomment the next line to define a global platform for your project
- source 'https://github.com/CocoaPods/Specs.git'
-#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+#plugin 'cocoapods-art', :sources => ['cocoapods']
+#plugin 'cocoapods-rome'
 
 
 platform :ios, '15.0'
@@ -39,12 +41,24 @@ target 'MarsVPN' do
         project.targets.each do |target|
             target.build_configurations.each do |config|
                 config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+                config.build_settings['SWIFT_VERSION'] = '5.0'
+                config.build_settings['SWIFT_COMPILATION_MODE'] = 'wholemodule'
+#                config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = 'NO'
+
+##                # DeadArg
+#                config.build_settings['OTHER_SWIFT_FLAGS'] ||= ['$(inherited)']
+#                config.build_settings['OTHER_SWIFT_FLAGS'] << '-Xfrontend -disable-dead-argument-elimination'
+#
+#                # Release
+#                if config.name == 'Release'
+#                  config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+#                  config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+#                end
             end
         end
     end
   end
-
-
+  
 
 end
 

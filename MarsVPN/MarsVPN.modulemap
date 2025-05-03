@@ -1,0 +1,6 @@
+framework module MarsVPN_ObjC {
+    umbrella header "MarsVPN-Bridging-Header.h"
+    export *
+}
+
+//MarsVPN/MarsVPN-Bridging-Header.h

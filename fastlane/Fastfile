@@ -157,6 +157,7 @@ platform :ios do
 
       # 构建你的应用
       build_app(
+          workspace: "MarsVpn.xcworkspace",
           export_xcargs: "-allowProvisioningUpdates", #keychain授权
           export_options: {
             provisioningProfiles: { 
@@ -165,7 +166,7 @@ platform :ios do
             }  
           },
           scheme: "MarsVpn",
-          project: "MarsVpn.xcodeproj",
+          # project: "MarsVpn.xcodeproj",
           clean: false,
           export_method: "app-store",
           output_directory: "./build"

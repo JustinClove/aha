@@ -37,11 +37,26 @@ target 'MarsVPN' do
   pod 'Google-Mobile-Ads-SDK', '~> 9.11.0.1'
   
   post_install do |installer|
+    
+    swift4 = []
+    swift42 = ['CountdownLabel']
+    installer.pods_project.targets.each do |target|
+       target.build_configurations.each do |config|
+         config.build_settings['SWIFT_VERSION'] = '5.0'
+#         if swift4.include?(target.name)
+#           config.build_settings['SWIFT_VERSION'] = '4.0'
+#         end
+#         if swift42.include?(target.name)
+#           config.build_settings['SWIFT_VERSION'] = '4.2'
+#         end
+       end
+    end
+    
     installer.generated_projects.each do |project|
         project.targets.each do |target|
             target.build_configurations.each do |config|
                 config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
-                config.build_settings['SWIFT_VERSION'] = '5.0'
+#                config.build_settings['SWIFT_VERSION'] = '5.0'
                 config.build_settings['SWIFT_COMPILATION_MODE'] = 'wholemodule'
 #                config.build_settings['COMPILER_INDEX_STORE_ENABLE'] = 'NO'
 
@@ -51,8 +66,8 @@ target 'MarsVPN' do
 #
 #                # Release
 #                if config.name == 'Release'
-#                  config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
-#                  config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
+                  config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+                  config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
 #                end
             end
         end

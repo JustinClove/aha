@@ -8,7 +8,7 @@
 import Foundation
 import HandyJSON
 import SwiftyJSON
-import HDPingTools
+//import HDPingTools
 
 let DefaultVPNType = VPNType.Trojan
 
@@ -395,24 +395,24 @@ extension NodeModel {
     
     func pingTools() {
         tempPing = nil
-        
-        let pingTools = HDPingTools(hostName: ip)
-        pingTools.showNetworkActivityIndicator = .none
-        pingTools.start(pingType: .any, interval: .second(2)) { [weak self] (response, error) in
-            debugPrint("ping response = \(response)")
-//            if let error = error {
-//                print(error)
+//        
+//        let pingTools = HDPingTools(hostName: ip)
+//        pingTools.showNetworkActivityIndicator = .none
+//        pingTools.start(pingType: .any, interval: .second(2)) { [weak self] (response, error) in
+//            debugPrint("ping response = \(response)")
+////            if let error = error {
+////                print(error)
+////            }
+//            
+//            if let response = response {
+//                let second = response.responseTime.second
+//                let milSecond = second * 1000
+//                let mm: Int = Int(milSecond)
+//                self?.tempPing = mm.string
 //            }
-            
-            if let response = response {
-                let second = response.responseTime.second
-                let milSecond = second * 1000
-                let mm: Int = Int(milSecond)
-                self?.tempPing = mm.string
-            }
-            
-            pingTools.stop()
-        }
+//            
+//            pingTools.stop()
+//        }
     }
     
 

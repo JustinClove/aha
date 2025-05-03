@@ -1,5 +1,7 @@
 # Uncomment the next line to define a global platform for your project
-# source 'https://github.com/CocoaPods/Specs.git'
+ source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+
 
 platform :ios, '15.0'
 
@@ -29,7 +31,7 @@ target 'MarsVPN' do
   pod 'KMNavigationBarTransition'
   pod 'ReachabilitySwift', '~> 5.0.0'
   pod 'Flurry-iOS-SDK/FlurrySDK'
-  pod 'HDPingTools', '~> 2.0.0'
+#  pod 'HDPingTools', '~> 2.0.0'
   pod 'Google-Mobile-Ads-SDK', '~> 9.11.0.1'
   
   post_install do |installer|

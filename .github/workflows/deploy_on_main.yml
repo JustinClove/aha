@@ -52,7 +52,8 @@ jobs:
       #   # FASTLANE_PASSWORD: 2222
       run: |
         fastlane action app_store_connect_api_key
-        fastlane release
+        # fastlane release
+        fastlane uploadAppstore
         # fastlane match_all
 
     # - name: upload testflight1

@@ -188,8 +188,8 @@ platform :ios do
   # 上传到 App Store Connect
   # ---------------------------
   desc "上传本地生成的 IPA 到 App Store"
-  lane :upload_to_appstore do |options|
-    ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
+  lane :uploadAppstore do |options|
+    ipa_path = options[:ipa_path] || "MarsVpn.ipa"
     
     # 验证 IPA 存在
     UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)
@@ -205,7 +205,7 @@ platform :ios do
   end
 
   desc "上传本地生成的 IPA 到 TestFlight"
-  lane :upload_to_testflight do |options|
+  lane :uploadTestflight do |options|
     ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
     
     UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)

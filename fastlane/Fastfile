@@ -189,7 +189,7 @@ platform :ios do
   # ---------------------------
   desc "上传本地生成的 IPA 到 App Store"
   lane :uploadAppstore do |options|
-    ipa_path = options[:ipa_path] || "MarsVPN.ipa"
+    ipa_path = options[:ipa_path] || "./MarsVPN.ipa"
     
     # 验证 IPA 存在
     UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)

@@ -21,21 +21,21 @@ platform :ios do
 
   # 定义一个全局变量api_key，下面都会要用到这个 api_key
   # key_id 和 issuer_id 都可以在 AppStoreConnect后台 -> 用户和访问 -> 秘钥 这里找到
-  # api_key = app_store_connect_api_key(
-  #     key_id: "29GV9Y24TJ",
-  #     issuer_id: "dd8720fa-81f1-4700-8c0c-e44dc6cb03ab",
-  #     key_filepath: "fastlane/huasong/AuthKey_29GV9Y24TJ.p8", # 上面下载的p8文件路径
-  #     duration: 1200, # optional (maximum 1200)
-  #     in_house: false # optional but may be required if using match/sigh
-  # )
-
   api_key = app_store_connect_api_key(
-    key_id: "ULMB59343L",
-    issuer_id: "d5ed3a09-3e63-42df-8b88-9681fd94623f",
-    key_filepath: "fastlane/warp/AuthKey_ULMB59343L.p8", # 上面下载的p8文件路径
-    duration: 1200, # optional (maximum 1200)
-    in_house: false # optional but may be required if using match/sigh
+      key_id: "29GV9Y24TJ",
+      issuer_id: "dd8720fa-81f1-4700-8c0c-e44dc6cb03ab",
+      key_filepath: "fastlane/huasong/AuthKey_29GV9Y24TJ.p8", # 上面下载的p8文件路径
+      duration: 1200, # optional (maximum 1200)
+      in_house: false # optional but may be required if using match/sigh
   )
+
+  # api_key = app_store_connect_api_key(
+  #   key_id: "ULMB59343L",
+  #   issuer_id: "d5ed3a09-3e63-42df-8b88-9681fd94623f",
+  #   key_filepath: "fastlane/warp/AuthKey_ULMB59343L.p8", # 上面下载的p8文件路径
+  #   duration: 1200, # optional (maximum 1200)
+  #   in_house: false # optional but may be required if using match/sigh
+  # )
 
 # fastlane run app_store_connect_api_key  key_id:"29GV9Y24TJ" issuer_id:"dd8720fa-81f1-4700-8c0c-e44dc6cb03ab" key_filepath:"AuthKey_29GV9Y24TJ.p8"
   
@@ -143,7 +143,6 @@ platform :ios do
         skip_certificate_verification: true,
         force: true
       )
-
 
       # 先同步appstore证书和描述文件
       # match(api_key: api_key, type: "appstore", readonly: true)

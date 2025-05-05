@@ -123,14 +123,6 @@ platform :ios do
         targets: ["ShadowsocksExtension"]
       )
 
-      sigh(
-          api_key: api_key,
-          app_identifier: bundle_identifier,
-          username: account,
-          team_id: teamid,
-          team_name: team_name,
-          provisioning_name: mobileprovision_name
-      )
 
       sigh(
         api_key: api_key,
@@ -142,6 +134,16 @@ platform :ios do
         # skip_fetch_profiles: true,
         skip_certificate_verification: true,
         force: true
+      )
+
+
+      sigh(
+          api_key: api_key,
+          app_identifier: bundle_identifier,
+          username: account,
+          team_id: teamid,
+          team_name: team_name,
+          provisioning_name: mobileprovision_name
       )
 
       # 先同步appstore证书和描述文件
@@ -159,6 +161,7 @@ platform :ios do
       # 构建你的应用
       build_app(
           workspace: "MarsVpn.xcworkspace",
+          scheme: "MarsVpn",
           export_xcargs: "-allowProvisioningUpdates", #keychain授权
           export_options: {
             provisioningProfiles: { 
@@ -169,7 +172,6 @@ platform :ios do
             # signingCertificate: "iPhone Distribution: MARS PRIVACY INC (AH46QT2Y7A)",
             # teamID: teamid,         
           },
-          scheme: "MarsVpn",
           # project: "MarsVpn.xcodeproj",
           clean: false,
           export_method: "app-store",

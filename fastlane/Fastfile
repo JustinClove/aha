@@ -139,7 +139,7 @@ platform :ios do
         team_id: teamid,
         team_name: team_name,
         provisioning_name: mobileprovision_name_packet,
-        skip_fetch_profiles: true,
+        # skip_fetch_profiles: true,
         skip_certificate_verification: true,
         force: true
       )

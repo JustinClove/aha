@@ -22,14 +22,13 @@ jobs:
         sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
         xcodebuild -version
 
-
     - name: Install Fastlane
       run: |
         gem install fastlane -NV
 
     - name: Install CocoaPods
       run: |
-    #     gem install cocoapods -v 1.15.2  
+        # gem install cocoapods -v 1.15.2  
         pod --version
         pod install
 

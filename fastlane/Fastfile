@@ -55,23 +55,23 @@ platform :ios do
 
   lane :release do
 
-      teamid = "3D59AJD96Y"
-      team_name = "huasong teng"
-      bundle_identifier = "com.start.vpn"
-      bundle_identifier_packet = "com.start.vpn.packet"
-      account = "song19861206@163.com"
-      mobileprovision_name = "dis_start3"
-      mobileprovision_name_packet = "dis_start_packet"
-      dir_name = "huasong"
+      # teamid = "3D59AJD96Y"
+      # team_name = "huasong teng"
+      # bundle_identifier = "com.start.vpn"
+      # bundle_identifier_packet = "com.start.vpn.packet"
+      # account = "song19861206@163.com"
+      # mobileprovision_name = "dis_start3"
+      # mobileprovision_name_packet = "dis_start_packet"
+      # dir_name = "huasong"
 
-      # teamid = "AH46QT2Y7A"
-      # team_name = "MARS PRIVACY INC"
-      # bundle_identifier = "com.warpvpn.data"
-      # bundle_identifier_packet = "com.warpvpn.data.packet1"
-      # account = "marsvpn.net@gmail.com"
-      # mobileprovision_name = "dis9"
-      # mobileprovision_name_packet = "dis9p"
-      # dir_name = "warp"
+      teamid = "AH46QT2Y7A"
+      team_name = "MARS PRIVACY INC"
+      bundle_identifier = "com.warpvpn.data"
+      bundle_identifier_packet = "com.warpvpn.data.packet1"
+      account = "marsvpn.net@gmail.com"
+      mobileprovision_name = "dis9"
+      mobileprovision_name_packet = "dis9p"
+      dir_name = "warp"
 
 
       # 读取文件内容
@@ -163,7 +163,10 @@ platform :ios do
             provisioningProfiles: { 
               bundle_identifier => mobileprovision_name,
               bundle_identifier_packet => mobileprovision_name_packet
-            }  
+            },
+            # signingStyle: "manual",
+            # signingCertificate: "iPhone Distribution: MARS PRIVACY INC (AH46QT2Y7A)",
+            # teamID: teamid,         
           },
           scheme: "MarsVpn",
           # project: "MarsVpn.xcodeproj",

@@ -100,7 +100,6 @@
 		04D0DDA22935C5B500230C1D /* GetIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D0DDA02935C5B500230C1D /* GetIP.m */; };
 		04FDAD6E294EC9D7007DB2C7 /* GoogleService-Info-test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04FDAD6D294EC9D7007DB2C7 /* GoogleService-Info-test.plist */; };
 		3D793EB597814C9DF1B2E112 /* Pods_MarsVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9627662F14FD49A2CFDB965 /* Pods_MarsVPN.framework */; };
-		8001DB632DC850570012F769 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8001DB622DC850570012F769 /* ExportOptions.plist */; };
 		914E2C2F2A0B36A5004CB5B6 /* MVAPISystemConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914E2C2E2A0B36A5004CB5B6 /* MVAPISystemConfig.swift */; };
 		914E2C302A0B876C004CB5B6 /* MVTunnelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B65F0A29ED4EA2002724B3 /* MVTunnelStore.swift */; };
 		919DF1412A655A08009B8322 /* MVFreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919DF13E2A655A08009B8322 /* MVFreeViewController.swift */; };
@@ -286,7 +285,6 @@
 		04D0DDA12935C5B500230C1D /* GetIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetIP.h; sourceTree = "<group>"; };
 		04FDAD6D294EC9D7007DB2C7 /* GoogleService-Info-test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-test.plist"; sourceTree = "<group>"; };
 		53084A3E05335E25566F18F6 /* Pods-MarsVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.debug.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.debug.xcconfig"; sourceTree = "<group>"; };
-		8001DB622DC850570012F769 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ExportOptions.plist; sourceTree = "<group>"; };
 		8BD1C923763C284BBAC65D76 /* Pods-MarsVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsVPN.release.xcconfig"; path = "Target Support Files/Pods-MarsVPN/Pods-MarsVPN.release.xcconfig"; sourceTree = "<group>"; };
 		912FB66D2D900CAF000FFD64 /* ShadowsocksExtensionDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = ShadowsocksExtensionDebug.entitlements; sourceTree = "<group>"; };
 		914E2C2E2A0B36A5004CB5B6 /* MVAPISystemConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVAPISystemConfig.swift; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				91B1501F2AD8F4E3009FA7A3 /* StoreKit.storekit */,
-				8001DB622DC850570012F769 /* ExportOptions.plist */,
 				0438ADD4292C9EFA009A526D /* MarsVPN */,
 				0438AE14292CAB60009A526D /* ShadowsocksExtension */,
 				0438ADEE292C9F37009A526D /* Frameworks */,
@@ -982,7 +979,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8001DB632DC850570012F769 /* ExportOptions.plist in Resources */,
 				04A8C3962938D93B005F598A /* Montserrat-Light-6.otf in Resources */,
 				04A8C3942938D93B005F598A /* Montserrat-Medium-7.otf in Resources */,
 				04A8C3922938D93B005F598A /* Montserrat-Regular-8.otf in Resources */,

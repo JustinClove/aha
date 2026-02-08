@@ -69,6 +69,7 @@ target 'MarsVPN' do
                   config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
                   config.build_settings['GCC_OPTIMIZATION_LEVEL'] = '0'
 #                end
+
             end
         end
     end

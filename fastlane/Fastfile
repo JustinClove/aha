@@ -29,9 +29,9 @@ platform :ios do
   #     in_house: false # optional but may be required if using match/sigh
   # )
   api_key = app_store_connect_api_key(
-    key_id: "ULMB59343L",
+    key_id: "VCCYMVDJ5L",
     issuer_id: "d5ed3a09-3e63-42df-8b88-9681fd94623f",
-    key_filepath: "fastlane/warp/AuthKey_ULMB59343L.p8", # 上面下载的p8文件路径
+    key_filepath: "fastlane/warp/AuthKey_VCCYMVDJ5L.p8", # 上面下载的p8文件路径
     duration: 1200, # optional (maximum 1200)
     in_house: false # optional but may be required if using match/sigh
   )
@@ -53,10 +53,10 @@ platform :ios do
       teamid = "AH46QT2Y7A"
       team_name = "MARS PRIVACY INC"
       bundle_identifier = "com.warpvpn.data"
-      bundle_identifier_packet = "com.warpvpn.data.packet1"
+      bundle_identifier_packet = "com.warpvpn.data.proxy"
       account = "marsvpn.net@gmail.com"
-      mobileprovision_name = "dis9"
-      mobileprovision_name_packet = "dis9p"
+      mobileprovision_name = "dis11"
+      mobileprovision_name_packet = "dis11p"
       dir_name = "warp"
 
 
@@ -71,6 +71,28 @@ platform :ios do
       # # 输出文件内容
       # puts "Content of #{file_path}: #{file_content}"
       sh "security find-identity -v -p codesigning"
+
+      sigh(
+        api_key: api_key,
+        app_identifier: bundle_identifier,
+        username: account,
+        team_id: teamid,
+        team_name: team_name,
+        provisioning_name: mobileprovision_name,
+        output_path: "fastlane/#{dir_name}",
+        filename: "#{mobileprovision_name}.mobileprovision"
+      )
+
+      sigh(
+          api_key: api_key,
+          app_identifier: bundle_identifier_packet,
+          username: account,
+          team_id: teamid,
+          team_name: team_name,
+          provisioning_name: mobileprovision_name_packet,
+          output_path: "fastlane/#{dir_name}",
+          filename: "#{mobileprovision_name_packet}.mobileprovision"
+      )
 
       update_project_provisioning(
           xcodeproj: "MarsVPN.xcodeproj",
@@ -108,63 +130,39 @@ platform :ios do
         targets: ["ShadowsocksExtension"]
       )
 
-      sigh(
-          api_key: api_key,
-          app_identifier: bundle_identifier,
-          username: account,
-          team_id: teamid,
-          team_name: team_name,
-          provisioning_name: mobileprovision_name
-      )
-
-      sigh(
-        api_key: api_key,
-        app_identifier: bundle_identifier_packet,
-        username: account,
-        team_id: teamid,
-        team_name: team_name,
-        provisioning_name: mobileprovision_name_packet,
-        skip_certificate_verification: true,
-        force: true
-      )
-
-
-      # 先同步appstore证书和描述文件
-      # match(api_key: api_key, type: "appstore", readonly: true)
-      # match(api_key: api_key, type: "appstore", readonly: true, git_private_key: file_content)
-
-      # cocoapods()
-
-         # 增加构建号
+      # 增加构建号
       increment_build_number(
-          xcodeproj: "MarsVpn.xcodeproj",
+          xcodeproj: "MarsVPN.xcodeproj",
           build_number: date_based_build_number
       )
 
+      # sh "xcodebuild -workspace MarsVPN.xcworkspace -list"
+
       # 构建你的应用
       build_app(
+          workspace: "MarsVPN.xcworkspace",
+          scheme: "MarsVPN",
           export_xcargs: "-allowProvisioningUpdates", #keychain授权
           export_options: {
             provisioningProfiles: { 
               bundle_identifier => mobileprovision_name,
               bundle_identifier_packet => mobileprovision_name_packet
-            }  
+            },       
           },
-          scheme: "MarsVpn",
-          project: "MarsVpn.xcodeproj",
           clean: false,
           export_method: "app-store",
           output_directory: "./build"
       )
-      # # 上传应用到AppStore
-      # upload_to_app_store(
-      #       api_key: api_key,
-      #       force: true, # Skip HTMl report verification
-      #       skip_screenshots: true,
-      #       skip_metadata: true,
-      #       submit_for_review: false,
-      #       precheck_include_in_app_purchases: false,
-      # )
+      
+      # 上传应用到AppStore
+      upload_to_app_store(
+            api_key: api_key,
+            force: true, # Skip HTMl report verification
+            skip_screenshots: true,
+            skip_metadata: true,
+            submit_for_review: false,
+            precheck_include_in_app_purchases: false,
+      )
 
   end
 
@@ -173,8 +171,8 @@ platform :ios do
   # 上传到 App Store Connect
   # ---------------------------
   desc "上传本地生成的 IPA 到 App Store"
-  lane :upload_to_appstore do |options|
-    ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
+  lane :uploadAppstore do |options|
+    ipa_path = options[:ipa_path] || "./MarsVPN.ipa"
     
     # 验证 IPA 存在
     UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)
@@ -190,8 +188,8 @@ platform :ios do
   end
 
   desc "上传本地生成的 IPA 到 TestFlight"
-  lane :upload_to_testflight do |options|
-    ipa_path = options[:ipa_path] || "./build/MarsVpn.ipa"
+  lane :uploadTestflight do |options|
+    ipa_path = options[:ipa_path] || "./build/MarsVPN.ipa"
     
     UI.user_error!("IPA 文件不存在：#{ipa_path}") unless File.exist?(ipa_path)
     
@@ -212,7 +210,7 @@ def default_build_number
 end
 
 def date_based_build_number
-  current_build_number = get_build_number(xcodeproj: "MarsVpn.xcodeproj")
+  current_build_number = get_build_number(xcodeproj: "MarsVPN.xcodeproj")
 
   build_date = current_build_number[0..7]
   build_version = current_build_number[8..9]

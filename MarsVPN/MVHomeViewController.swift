@@ -9,7 +9,7 @@ import Foundation
 import DeviceKit
 import HandyJSON
 import SwifterSwift
-import Closures
+
 
 class MVHomeViewController: LXBaseViewController {
     
@@ -122,9 +122,7 @@ class MVHomeViewController: LXBaseViewController {
             button.titleLabel?.font = .boldMontserratFont(ofSize: 12)
             button.layoutButtonImage(space: 6)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
-            button.onTap {
-                self.showPremium()
-            }
+            button.addTarget(self, action: #selector(showPremium), for: .touchUpInside)
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
@@ -183,6 +181,7 @@ class MVHomeViewController: LXBaseViewController {
         showPremium()
     }
     
+    @objc
     func showPremium() {
         let vc = MVPremiumViewController()
 //        vc.modalPresentationStyle = .fullScreen

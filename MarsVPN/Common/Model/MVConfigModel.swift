@@ -147,9 +147,9 @@ extension MVConfigModel {
     }
     
     static func isVIP() -> Bool {
-        #if DEBUG
-        return false
-        #endif
+//        #if DEBUG
+//        return false
+//        #endif
         if SystemModel.isAllowedVIP {
             return true
         }

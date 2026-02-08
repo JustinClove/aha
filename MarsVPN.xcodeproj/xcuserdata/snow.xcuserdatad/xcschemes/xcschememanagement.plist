@@ -9,10 +9,23 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ShadowsocksExtension.xcscheme_^#shared#^_</key>
+		<key>ShadowsocksExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>36</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0438ADD1292C9EFA009A526D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0438AE11292CAB60009A526D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

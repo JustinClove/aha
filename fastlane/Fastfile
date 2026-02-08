@@ -29,9 +29,9 @@ platform :ios do
   #     in_house: false # optional but may be required if using match/sigh
   # )
   api_key = app_store_connect_api_key(
-    key_id: "ULMB59343L",
+    key_id: "VCCYMVDJ5L",
     issuer_id: "d5ed3a09-3e63-42df-8b88-9681fd94623f",
-    key_filepath: "fastlane/warp/AuthKey_ULMB59343L.p8", # 上面下载的p8文件路径
+    key_filepath: "fastlane/warp/AuthKey_VCCYMVDJ5L.p8", # 上面下载的p8文件路径
     duration: 1200, # optional (maximum 1200)
     in_house: false # optional but may be required if using match/sigh
   )
@@ -53,10 +53,10 @@ platform :ios do
       teamid = "AH46QT2Y7A"
       team_name = "MARS PRIVACY INC"
       bundle_identifier = "com.warpvpn.data"
-      bundle_identifier_packet = "com.warpvpn.data.packet1"
+      bundle_identifier_packet = "com.warpvpn.data.proxy"
       account = "marsvpn.net@gmail.com"
-      mobileprovision_name = "dis9"
-      mobileprovision_name_packet = "dis9p"
+      mobileprovision_name = "dis11"
+      mobileprovision_name_packet = "dis11p"
       dir_name = "warp"
 
 

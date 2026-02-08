@@ -26,11 +26,10 @@ jobs:
       run: |
         gem install fastlane -NV
 
-    # - name: Install CocoaPods
-    #   run: |
-    #     # gem install cocoapods -v 1.15.2  
-    #     pod --version
-    #     pod install
+    - name: Install CocoaPods
+      run: |
+        pod --version
+        pod install
 
     - name: Install Apple certificates
       uses: apple-actions/import-codesign-certs@v1
@@ -52,8 +51,6 @@ jobs:
       run: |
         fastlane action app_store_connect_api_key
         fastlane release
-        # fastlane uploadAppstore
-        # fastlane match_all
 
     # - name: upload testflight1
     #   run: fastlane release

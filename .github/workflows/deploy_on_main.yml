@@ -12,20 +12,20 @@ on:
 jobs:
   build:
   # 使用 macOS 15 公开测试版
-    runs-on: macos-15
+    runs-on: macos-26
 
     steps:
     - uses: actions/checkout@v4  # 升级到最新 checkout 版本
 
-    - name: Select Xcode 16.2
-      run: |
-        sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
-        xcodebuild -version
+    # - name: Select Xcode 16.2
+    #   run: |
+    #     sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+    #     xcodebuild -version
 
 
     - name: Install Fastlane
       run: |
-        gem install cocoapods -v 1.15.2  
+        # gem install cocoapods -v 1.15.2  
         gem install fastlane -NV
 
     - name: Install CocoaPods
@@ -36,12 +36,12 @@ jobs:
     - name: Install Apple certificates
       uses: apple-actions/import-codesign-certs@v1
       with:
-        p12-filepath: fastlane/huasong/Certificates.p12
+        # p12-filepath: fastlane/huasong/Certificates.p12
         # p12-file-base64: ${{ secrets.CERTIFICATE_P12 }}
         # p12-password: ${{ secrets.CERTIFICATE_PASSWORD }}
-        p12-password: 2222
-        # p12-filepath: fastlane/warp/Certificates.p12
-        # p12-password: 123456
+        # p12-password: 2222
+        p12-filepath: fastlane/warp/Certificates.p12
+        p12-password: 123456
 
     - name: upload testflight
       # env:
